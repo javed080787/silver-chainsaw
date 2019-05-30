@@ -7,7 +7,7 @@ Class - Camel case with first letter alwaya caps
 Object - all small letters
 
 
-###########################################################
+############################################################
 
 
 ## find length of a string
@@ -142,20 +142,7 @@ while i <= limit:
     print(final_val)
 	
 	
-def fibo(limit):
-    num1=0
-    num2=1
-    print(num1,' ')
-    print(num2,' ')
-    #for i in range(2,limit):
-    while num2<=limit:
-        final_val=num1+num2
-        print(final_val)
-        num1=num2
-        num2=final_val
-		
-		6,128
-		
+
 # remove duplicates
 
 def uniq(nums):
@@ -497,5 +484,180 @@ if __name__ == '__main__':
 	a = [1, 2, 3, 4, 5]
 	b = [6, 7, 8, 9]
 	check_commons(a,b)
+	
+	
+	
+## combining multiple dicts to one dict
+dic1={1:10, 2:20} 
+dic2={3:30, 4:40} 
+dic3={5:50,6:60}
+
+final_dict={}
+for i in dic1,dic2,dic3:
+    final_dict.update(i)
+    
+ final_dict
+ 
+ 
+ ## remove duplicates from a dict
+ 
+ result={}
+for key,value in my_dict.items():
+    if value not in result.values():
+        result[key]=value
+        
+print(result)
 
 
+## create new dict from existing dict with common keys
+d1 = {'a': 100, 'b': 200, 'c':300,23:400}
+d2 = {'a': 300, 'b': 200, 'd':400,23:500}
+d3={}
+
+for keys in d1.keys():
+    if keys in d2.keys():
+        d3[keys]=d1[keys]+d2[keys]
+        
+d3
+
+##Dict comprehension - remove spaces from the keys
+
+student_list = {'S  001': ['Math', 'Science'], 'S    002': ['Math', 'English']}
+mydict={k.translate({32:None}):v for k,v in student_list.items()}
+output - {'S001': ['Math', 'Science'], 'S002': ['Math', 'English']}
+
+
+## another eg.
+keys = ['a','b','c','d','e'] 
+values = [1,2,3,4,5]
+mydict={k:v for (k,v) in zip(keys,values)}
+output - {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+
+## another eg.
+mydict1={k:k**2 for k in [1,2,3,4,5]}
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+
+
+	
+	
+#########Tuple##########
+
+## Adding element to tuple
+
+tup1=(1,2,'a',[1,2,3],{4:'ab'})
+tup2=()
+tup2=tup1+({45:'abcd'},)
+
+
+## to check if its a list or tuple or any other data type
+isinstance(a,list)
+
+
+
+## Centered avg
+def centered_average(nums):
+    nums.sort()
+    mylist=nums[1:len(nums)-1]
+    deno=len(mylist)
+    return int(sum(mylist)/deno)
+	
+	
+## Avg length of word in a string
+def find_avg_length(strng):
+    tempstrng=''
+    words=strng.split()
+    wordslen=len(words)
+    
+    for i in words:
+        tempstrng=tempstrng+i
+    
+    strnglen=len(tempstrng)
+    
+    avg_word_len=strnglen/wordslen
+    return avg_word_len
+	
+	
+## Print 
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* * * * 
+* * * 
+* * 
+*
+
+result=''
+for row in range(7):
+    for col in range(7):
+        if ((col==1) 
+            or (col==2 and row >0 and row<6)
+            or (col==3 and row >1 and row<5)
+            or (col==4 and row >2 and row<4)
+            or (col==5 and row >3 and row<3)
+            or (col==6 and row ==3)
+           ):
+            result=result+'*'
+        else:
+            result=result+''
+    result=result+'\n'
+print(result)
+
+
+
+##Fibonacci Series
+
+option -1
+def fibo(limit):
+    num1=0
+    num2=1
+    print(num1,' ')
+    print(num2,' ')
+    #for i in range(2,limit):
+    while num2<=limit:
+        final_val=num1+num2
+        print(final_val)
+        num1=num2
+        num2=final_val
+		
+	
+option -2
+x=0
+y=1
+print(x)
+while y<50:
+    print(y)
+    x,y=y,x+y
+	
+	
+
+
+## Check digit and alpha 
+
+isdigit()
+isalpha()
+
+## check if each digit is even 
+for num in range(100,401):
+    strng=str(num)
+    if (int(strng[0])%2==0 and int(strng[1])%2==0 and int(strng[2])%2==0):
+        print(strng)
+		
+		
+##
+for i in range(1,10):
+    j=str(i)
+    print(j*i)	
+	
+
+1
+22
+333
+4444
+55555
+666666
+7777777
+88888888
+999999999
